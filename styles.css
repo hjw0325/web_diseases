@@ -1,0 +1,275 @@
+/* 
+ * 4대 성인병과 예방법 - Center Alignment Tweaks
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --bg-mint: #E0F7FA;
+    --header-black: #050505;
+    --board-brown: #795548;
+    --paper-white: #FFFFFF;
+
+    /* Colors */
+    --txt-mint: #00F0E4;
+    --txt-white: #FFFFFF;
+    --stroke-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-mint);
+    background-image:
+        linear-gradient(rgba(0, 105, 92, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 105, 92, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #212121;
+}
+
+header {
+    background-color: var(--header-black);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 5px solid #333;
+}
+
+.header-sub,
+.header-team {
+    color: #CFD8DC;
+    font-family: 'Jua';
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.poster-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 5rem;
+    margin: 5px 0;
+    line-height: 1.1;
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.t-mint {
+    color: var(--txt-mint);
+}
+
+.t-white {
+    color: var(--txt-white);
+}
+
+/* Main Grid */
+.container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card Structure */
+.clipboard {
+    background-color: var(--board-brown);
+    border-radius: 15px;
+    padding: 15px;
+    padding-top: 55px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    /* Enforce Square-ish Shape */
+    aspect-ratio: 1 / 1.1;
+    height: auto;
+}
+
+.clip {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to bottom, #ECEFF1, #90A4AE);
+    border-radius: 8px;
+    border: 2px solid #607D8B;
+    z-index: 10;
+}
+
+.clip::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 8px;
+    background: #546E7A;
+    border-radius: 4px;
+}
+
+.paper {
+    background-color: var(--paper-white);
+    flex: 1;
+    border-radius: 4px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    /* Default behavior: space out strictly if content is heavy, otherwise allows normal flow */
+    justify-content: space-between;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* New Utility to center specific content blocks */
+.content-fill-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers items vertically */
+    gap: 15px;
+    /* Moderate gap between items */
+}
+
+/* Titles */
+.card-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 2.6rem;
+    margin: 0 0 12px 0;
+    line-height: 1.1;
+    text-align: center;
+    -webkit-text-stroke: 0.8px var(--stroke-color);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Content */
+p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+    word-break: keep-all;
+}
+
+/* Lists */
+ul,
+ol {
+    padding-left: 18px;
+    margin: 0 0 8px 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+li {
+    margin-bottom: 3px;
+}
+
+/* Highlights & Boxes */
+.hl-pen {
+    background: linear-gradient(to bottom, transparent 40%, rgba(255, 235, 59, 0.6) 40%, rgba(255, 235, 59, 0.6) 90%, transparent 90%);
+    padding: 0 3px;
+}
+
+.sticker {
+    background: #FFF59D;
+    border: 1px solid #FBC02D;
+    color: #F57F17;
+    font-family: 'Jua';
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.box-colored {
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.box-red {
+    background: #FFEBEE;
+}
+
+.box-orange {
+    background: #FFF3E0;
+}
+
+.box-blue {
+    background: #E3F2FD;
+}
+
+.box-green {
+    background: #E8F5E9;
+}
+
+.bmi-display {
+    text-align: center;
+    font-family: 'Black Han Sans';
+    font-size: 3rem;
+    color: #42A5F5;
+    -webkit-text-stroke: 1.5px #1565C0;
+    margin: 5px 0;
+}
+
+/* Prevention Grid */
+.prev-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.prev-item {
+    border: 2px solid #EEE;
+    border-radius: 6px;
+    padding: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.prev-head {
+    display: inline-block;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: 'Jua';
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    align-self: center;
+}
+
+.prev-body {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

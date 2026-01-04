@@ -1,0 +1,120 @@
+/* 
+ * Home Page Styles (Main Hub)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header / Hero */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.site-desc {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Campaign Grid (Buttons) */
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Force 3 columns */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    /* Provide enough space for 3 items */
+}
+
+@media (max-width: 900px) {
+    .campaign-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+}
+
+/* Campaign Card/Button */
+.campaign-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    cursor: pointer;
+}
+
+.campaign-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #764ba2;
+}
+
+.icon-box {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    color: #444;
+}
+
+.card-desc {
+    margin-top: 10px;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 0.9rem;
+}
